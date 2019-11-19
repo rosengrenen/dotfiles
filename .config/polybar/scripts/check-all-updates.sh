@@ -5,7 +5,7 @@ if ! updates_arch=$(checkupdates 2> /dev/null | wc -l ); then
 fi
 
 # if ! updates_aur=$(cower -u 2> /dev/null | wc -l); then
-if ! updates_aur=$(yay -n | wc -l); then
+if ! updates_aur=$(yay -Pn); then
     updates_aur=0
 fi
 
