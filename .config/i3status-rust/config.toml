@@ -1,0 +1,46 @@
+icons = "awesome"
+
+[[block]]
+block = "focused_window"
+max_width = 21
+
+[[block]]
+block = "sound"
+step_width = 4
+
+[[block]]
+block = "docker"
+interval = 2
+format = "{running}/{total}"
+
+[[block]]
+block = "cpu"
+interval = 1
+format = "{utilization}%"
+
+[[block]]
+block = "memory"
+format_mem = "{Mup}%"
+display_type = "memory"
+icons = true
+interval = 5
+warning_mem = 80
+warning_swap = 80
+critical_mem = 95
+critical_swap = 95
+
+[[block]]
+block = "battery"
+interval = 10
+format = "{percentage}% {time}"
+show = "percentage"
+
+[[block]]
+block = "backlight"
+device = "intel_backlight"
+
+[[block]]
+block = "time"
+format = "%a %d/%m %R"
+timezone = "Europe/Stockholm"
+interval = 60

@@ -149,7 +149,7 @@ bindsym $mod+d exec --no-startup-id rofi -show drun
 exec_always --no-startup-id setxkbmap -layout se -option altwin:swap_lalt_lwin -option caps:swapescape
 
 # Start composite manager
-exec_always --no-startup-id compton
+exec_always --no-startup-id picom
 
 focus_follows_mouse no
 
@@ -189,4 +189,37 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #000000
 
 client.background       #ffffff
 
-exec_always $HOME/.config/polybar/launch.sh
+# exec_always $HOME/.config/polybar/launch.sh
+
+bindsym Print exec flameshot gui
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 4
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 4
+bindsym XF86AudioMute exec --no-startup-id pamixer -t
+
+for_window [title="CCHAT"] floating enable
+
+bar {
+    font pango:Fira Code Retina, FontAwesome 12
+    position top
+    status_command i3status-rs ~/.config/i3status-rust/config.toml
+    colors {
+        separator #666666
+        background #222222
+        statusline #dddddd
+        focused_workspace #0088CC #0088CC #ffffff
+        active_workspace #333333 #333333 #ffffff
+        inactive_workspace #333333 #333333 #888888
+        urgent_workspace #2f343a #900000 #ffffff
+    }
+}

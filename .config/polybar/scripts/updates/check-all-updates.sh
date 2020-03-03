@@ -5,14 +5,14 @@ if ! updates_arch=$(checkupdates 2> /dev/null | wc -l ); then
 fi
 
 # if ! updates_aur=$(cower -u 2> /dev/null | wc -l); then
-if ! updates_aur=$(yay -Pn); then
+if ! updates_aur=$(yay -Pu 2> /dev/null | wc -l); then
     updates_aur=0
 fi
 
 updates=$(("$updates_arch" + "$updates_aur"))
 
 if [ "$updates" -gt 0 ]; then
-    echo " $updates"
+    echo "$updates"
 else
     echo "0"
 fi

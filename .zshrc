@@ -135,3 +135,9 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+source ~/vulkan/1.1.130.0/setup-env.sh
+
+alias clear='printf "\033c"'
+
+export CC=/usr/bin/clang
+export CXX=/usr/bin/clang++
