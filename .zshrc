@@ -17,7 +17,7 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="bobbyrussel"
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -133,7 +133,7 @@ export EDITOR='vim'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source ~/vulkan/1.1.130.0/setup-env.sh
 
@@ -141,3 +141,13 @@ alias clear='printf "\033c"'
 
 export CC=/usr/bin/clang
 export CXX=/usr/bin/clang++
+
+export GOPATH=~/go
+
+export TERM=termite
+
+alias garn="sudo yarn"
+
+eval "$(starship init zsh)"
+
+alias gk="gitkraken ."

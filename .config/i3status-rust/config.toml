@@ -5,13 +5,23 @@ block = "focused_window"
 max_width = 21
 
 [[block]]
+block = "net"
+device = "wlp2s0"
+ssid = true
+speed_up = false
+speed_down = false
+use_bits = false
+
+[[block]]
 block = "sound"
 step_width = 4
 
 [[block]]
-block = "docker"
-interval = 2
-format = "{running}/{total}"
+block = "pacman"
+interval = 10
+format = "{count}"
+format_singular = "{count}"
+format_up_to_date = "0"
 
 [[block]]
 block = "cpu"
