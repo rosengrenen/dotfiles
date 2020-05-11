@@ -197,19 +197,3 @@ bar {
 
 # Vim todo (wrong place ikr)
 # Turn off arrow keys and scroll
-
-# Open default applications on launch
-for_window [class="Google-chrome"] move to workspace $ws1
-for_window [class="code-oss"] move to workspace $ws2
-for_window [class="discord"] move to workspace $ws9
-for_window [class="Slack"] move to workspace $ws9
-for_window [class="zoom"] move to workspace $ws9
-for_window [class="Spotify"] move to workspace $ws10
-
-exec --no-startup-id i3-msg 'workspace $ws3; exec alacritty'
-exec --no-startup-id google-chrome-stable
-exec --no-startup-id code
-exec --no-startup-id slack -s -u
-exec --no-startup-id discord
-exec --no-startup-id spotify
-exec --no-startup-id i3-msg 'workspace $ws9; layout tabbed'
