@@ -38,4 +38,11 @@ fi
 # xterm -geometry 80x20+494-0 &
 # exec xterm -geometry 80x66+0+0 -name login
 feh --bg-scale ./.wallpapers/simplistic-mountain.jpg
+
+# i3-vm
 exec i3
+
+# Gnome
+# export XDG_SESSION_TYPE=x11
+# export GDK_BACKEND=x11
+# exec gnome-session

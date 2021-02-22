@@ -151,3 +151,12 @@ alias garn="sudo yarn"
 eval "$(starship init zsh)"
 
 alias gk="gitkraken ."
+
+export PATH="$PATH:`yarn global bin`"
+
+alias swedish="setxkbmap -layout se -option altwin:swap_lalt_lwin -option caps:swapescape"
+alias english="setxkbmap -layout us -option altwin:swap_lalt_lwin -option caps:swapescape"
+alias s="swedish"
+alias e="english"
+
+alias yay="paru"

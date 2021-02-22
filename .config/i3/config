@@ -120,7 +120,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # Setup keyboard config
-exec_always --no-startup-id setxkbmap -layout se -option altwin:swap_lalt_lwin -option caps:swapescape
+exec_always --no-startup-id setxkbmap -layout us -option altwin:swap_lalt_lwin -option caps:swapescape
 
 # Start composite manager
 exec picom
@@ -164,8 +164,8 @@ client.background       #ffffff
 bindsym Print exec flameshot gui
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -197,3 +197,6 @@ bar {
 
 # Vim todo (wrong place ikr)
 # Turn off arrow keys and scroll
+
+for_window [class="Animator"] floating enable
+for_window [class="ld47"] floating enable
