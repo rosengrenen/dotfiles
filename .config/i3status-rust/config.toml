@@ -7,10 +7,7 @@ max_width = 21
 [[block]]
 block = "net"
 device = "wlp2s0"
-ssid = true
-speed_up = false
-speed_down = false
-use_bits = false
+format = "{ssid}"
 
 [[block]]
 block = "sound"
@@ -26,11 +23,11 @@ format_up_to_date = "0"
 [[block]]
 block = "cpu"
 interval = 1
-format = "{utilization}%"
+format = "{utilization}"
 
 [[block]]
 block = "memory"
-format_mem = "{Mup}%"
+format_mem = "{mem_used_percents}"
 display_type = "memory"
 icons = true
 interval = 5
@@ -42,12 +39,16 @@ critical_swap = 95
 [[block]]
 block = "battery"
 interval = 10
-format = "{percentage}% {time}"
-show = "percentage"
+format = "{percentage} {time}"
 
 [[block]]
 block = "backlight"
 device = "intel_backlight"
+
+[[block]]
+block = "custom"
+command = "/home/rosen/.config/i3status-rust/scripts/kb-layout.sh"
+interval = 3
 
 [[block]]
 block = "time"

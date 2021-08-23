@@ -120,7 +120,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # Setup keyboard config
-exec_always --no-startup-id setxkbmap -layout us -option altwin:swap_lalt_lwin -option caps:swapescape
+exec_always "setxkbmap -model pc105 -layout us,se -variant , -option altwin:swap_lalt_lwin -option caps:swapescape -option grp:win_space_toggle"
 
 # Start composite manager
 exec picom
@@ -200,3 +200,6 @@ bar {
 
 for_window [class="Animator"] floating enable
 for_window [class="ld47"] floating enable
+
+for_window [class="net-runelite-client-RuneLite"] floating enable
+for_window [class="net-runelite-launcher-Launcher"] floating enable

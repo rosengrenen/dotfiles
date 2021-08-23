@@ -39,6 +39,10 @@ fi
 # exec xterm -geometry 80x66+0+0 -name login
 feh --bg-scale ./.wallpapers/simplistic-mountain.jpg
 
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+
 # i3-vm
 exec i3
 
