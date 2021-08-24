@@ -1,0 +1,151 @@
+# set left alt to mod key
+set $mod Mod4
+
+# drag windows with left alt + mouse
+floating_modifier $mod
+
+font pango:Source Code Pro 600 14
+
+# restart i3
+bindsym $mod+Shift+r restart
+
+# start a terminal
+bindsym $mod+Return exec alacritty 
+
+# kill focused window
+bindsym $mod+q kill
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# horizontal split mode
+bindsym $mod+z split h
+
+# vertical split mode
+bindsym $mod+v split v
+
+# fullscreen toggle of focused window
+bindsym $mod+f fullscreen toggle
+
+# change container layout
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# define names for default workspaces so that they can be referenced later 
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# resize window with keyboard
+mode "resize" {
+        # decrease width
+        bindsym h resize shrink width 10 px or 10 ppt
+
+        # increase height
+        bindsym j resize grow height 10 px or 10 ppt
+        
+        # decrease height
+        bindsym k resize shrink height 10 px or 10 ppt
+
+        # increase width
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # back to normal
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# application launcher 
+bindsym $mod+d exec --no-startup-id rofi -show drun
+
+# window switcher
+bindsym $mod+tab rofi -show window
+
+# keyboard config
+exec_always "setxkbmap -model pc105 -layout us,se -variant , -option altwin:swap_lalt_lwin -option caps:swapescape -option grp:win_space_toggle"
+
+# start composite manager
+exec picom
+
+focus_follows_mouse no
+
+default_border pixel 3
+default_floating_border none
+hide_edge_borders none
+
+# switch to workspace with urgent window automatically
+for_window [urgent=latest] focus
+smart_borders on
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #000000 #285577 #ffffff #2e9ef4   #b3f3f3
+client.focused_inactive #000000 #5f676a #ffffff #484e50   #0c4443
+client.unfocused        #000000 #222222 #888888 #292d2e   #0c4443
+client.urgent           #000000 #900000 #ffffff #900000   #ff0000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #000000
+client.background       #ffffff
+
+bindsym $mod+Shift+s exec flameshot gui
+
+# screen brightness controls
+bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
+
+# media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# volume controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 4
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 4
+bindsym XF86AudioMute exec --no-startup-id pamixer -t
