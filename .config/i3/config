@@ -168,3 +168,6 @@ bar {
 			urgent_workspace #2f343a #900000 #ffffff
 	}
 }
+
+# Set background image
+exec --no-startup-id feh --bg-scale $HOME/.wallpapers/simplistic-mountain.jpg
