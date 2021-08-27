@@ -153,7 +153,7 @@ bindsym XF86AudioMute exec --no-startup-id pamixer -t
 bar {
 	font pango:Source Code Pro 600, FontAwesome 12
 	position top
-	status_command i3status-simple
+	status_command .cargo/bin/i3status-simple
 	colors {
 			separator #666666
 			background #222222
