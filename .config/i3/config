@@ -4,7 +4,7 @@ set $mod Mod4
 # drag windows with left alt + mouse
 floating_modifier $mod
 
-font pango:Source Code Pro 600 14
+font pango:Source Code Pro SemiBold 10
 
 # restart i3
 bindsym $mod+Shift+r restart
@@ -42,10 +42,10 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+Space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Space focus mode_toggle
 
 # define names for default workspaces so that they can be referenced later 
 set $ws1 "1"
@@ -86,16 +86,20 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # resize window with keyboard
 mode "resize" {
         # decrease width
-        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym h resize shrink width 1 px or 1 ppt
+        bindsym $mod+h resize shrink width 1 px or 4 ppt
 
         # increase height
-        bindsym j resize grow height 10 px or 10 ppt
+        bindsym j resize grow height 1 px or 1 ppt
+        bindsym $mod+j resize grow height 1 px or 4 ppt
         
         # decrease height
-        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym k resize shrink height 1 px or 1 ppt
+        bindsym $mod+k resize shrink height 1 px or 4 ppt
 
         # increase width
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym l resize grow width 1 px or 1 ppt
+        bindsym $mod+l resize grow width 1 px or 4 ppt
 
         # back to normal
         bindsym Escape mode "default"
@@ -151,7 +155,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 4
 bindsym XF86AudioMute exec --no-startup-id pamixer -t
 
 bar {
-	font pango:Source Code Pro 600, FontAwesome 12
+	font pango:Source Code Pro SemiBold, FontAwesome 10
 	position top
 	status_command .cargo/bin/i3status-simple
 	colors {
