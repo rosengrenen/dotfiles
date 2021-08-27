@@ -106,10 +106,9 @@ bindsym $mod+r mode "resize"
 
 # application launcher 
 bindsym $mod+d exec --no-startup-id rofi -show drun -sorting fzf -matching fuzzy
-bindsym $mod+tab exec --no-startup-id rofi -show window -sorting fzf -matching fuzzy
 
 # window switcher
-bindsym $mod+tab rofi -show window
+bindsym $mod+Tab exec --no-startup-id rofi -show window -sorting fzf -matching fuzzy
 
 # keyboard config
 exec_always "setxkbmap -model pc105 -layout us,se -variant , -option altwin:swap_lalt_lwin -option caps:swapescape -option grp:win_space_toggle"
