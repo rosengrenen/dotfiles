@@ -85,25 +85,25 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # resize window with keyboard
 mode "resize" {
-        # decrease width
-        bindsym h resize shrink width 1 px or 1 ppt
-        bindsym $mod+h resize shrink width 1 px or 4 ppt
+  # decrease width
+  bindsym h resize shrink width 1 px or 1 ppt
+  bindsym $mod+h resize shrink width 1 px or 4 ppt
 
-        # increase height
-        bindsym j resize grow height 1 px or 1 ppt
-        bindsym $mod+j resize grow height 1 px or 4 ppt
-        
-        # decrease height
-        bindsym k resize shrink height 1 px or 1 ppt
-        bindsym $mod+k resize shrink height 1 px or 4 ppt
+  # increase height
+  bindsym j resize grow height 1 px or 1 ppt
+  bindsym $mod+j resize grow height 1 px or 4 ppt
 
-        # increase width
-        bindsym l resize grow width 1 px or 1 ppt
-        bindsym $mod+l resize grow width 1 px or 4 ppt
+  # decrease height
+  bindsym k resize shrink height 1 px or 1 ppt
+  bindsym $mod+k resize shrink height 1 px or 4 ppt
 
-        # back to normal
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+  # increase width
+  bindsym l resize grow width 1 px or 1 ppt
+  bindsym $mod+l resize grow width 1 px or 4 ppt
+
+  # back to normal
+  bindsym Escape mode "default"
+  bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -155,18 +155,33 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 4
 bindsym XF86AudioMute exec --no-startup-id pamixer -t
 
 bar {
-	font pango:Source Code Pro SemiBold, FontAwesome 10
-	position top
-	status_command .cargo/bin/i3status-simple
-	colors {
-			separator #666666
-			background #222222
-			statusline #dddddd
-			focused_workspace #0088CC #0088CC #ffffff
-			active_workspace #333333 #333333 #ffffff
-			inactive_workspace #333333 #333333 #888888
-			urgent_workspace #2f343a #900000 #ffffff
-	}
+  id main
+  font pango:Source Code Pro SemiBold, FontAwesome 10
+  position top
+  status_command .cargo/bin/i3status-simple
+  tray_output none
+  colors {
+    separator          #666666
+    background         #222222
+    statusline         #dddddd
+    focused_workspace  #0088CC #0088CC #ffffff
+    active_workspace   #333333 #333333 #ffffff
+    inactive_workspace #333333 #333333 #888888
+    urgent_workspace   #2f343a #900000 #ffffff
+  }
+}
+
+bindsym $mod+t bar mode toggle tray
+bar {
+  id tray
+  mode hide
+  modifier none
+  position bottom
+  tray_output primary
+  workspace_buttons no
+  colors {
+    background #222222
+  }
 }
 
 # Set background image
