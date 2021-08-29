@@ -187,6 +187,9 @@ bar {
 # Set background image
 exec --no-startup-id feh --bg-scale $HOME/.wallpapers/simplistic-mountain.jpg
 
+# Update lock screen bg cache
+exec --no-startup-id betterlockscreen -u $HOME/wallpapers/blue-whale.png
+
 # Lock after 5 minutes
 exec --no-startup-id xset s 300 600
-exec --no-strtaup-id xss-lock $HOME/.config/i3/scripts/lock.sh
+exec --no-startup-id xss-lock --transfer-sleep-lock $HOME/.config/i3/scripts/lock.sh

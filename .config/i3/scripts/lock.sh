@@ -5,5 +5,5 @@ revert() {
 
 trap revert HUP INT TERM
 xset +dpms dpms 15 15 15
-i3lock -n -e -i $HOME/.wallpapers/blue-whale.png
+betterlockscreen -l -- -n -e
 revert
