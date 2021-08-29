@@ -189,4 +189,4 @@ exec --no-startup-id feh --bg-scale $HOME/.wallpapers/simplistic-mountain.jpg
 
 # Lock after 5 minutes
 exec --no-startup-id xset s 300 600
-xss-lock $HOME/.config/i3/scripts/lock.sh
+exec --no-strtaup-id xss-lock $HOME/.config/i3/scripts/lock.sh
