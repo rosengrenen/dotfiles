@@ -1,13 +1,14 @@
 icons = "awesome"
+#icons_format = "{icon}"
 
 [[block]]
 block = "focused_window"
 max_width = 21
 
 [[block]]
-block = "net"
-device = "wlp2s0"
-format = "{ssid}"
+block = "networkmanager"
+primary_only = true
+device_format = "{name}"
 
 [[block]]
 block = "sound"
@@ -16,8 +17,8 @@ step_width = 4
 [[block]]
 block = "pacman"
 interval = 10
-format = "{count}"
-format_singular = "{count}"
+format = " {count} "
+format_singular = " {count} "
 format_up_to_date = "0"
 
 [[block]]

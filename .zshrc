@@ -87,7 +87,6 @@ plugins=(
 	git 
 	gpg-agent 
 	lol 
-	ssh-agent 
 	shrink-path 
 	sudo 
 	web-search 
