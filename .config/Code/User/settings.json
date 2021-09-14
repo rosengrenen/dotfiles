@@ -1,0 +1,81 @@
+{
+	// Editor settings
+	"editor.fontFamily": "Source Code Pro",
+	"editor.fontWeight": 600,
+	"editor.fontLigatures": false,
+	"editor.fontSize": 14,
+	"editor.lineHeight": 20,
+	"editor.tabSize": 2,
+	"editor.detectIndentation": false,
+	"editor.minimap.enabled": false,
+	"editor.suggestSelection": "first",
+	"editor.formatOnPaste": true,
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"editor.cursorStyle": "line",
+	"editor.lineNumbers": "on",
+	"editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+	"editor.wordWrap": "on",
+	// Emmet
+	"emmet.includeLanguages": {
+		"javascript": "javascriptreact"
+	},
+	"emmet.showExpandedAbbreviation": "never",
+	"emmet.triggerExpansionOnTab": true,
+	// ESLint
+	"eslint.packageManager": "yarn",
+	"sync.gist": "f6ff8c435e719efbe43876653140a834",
+	"window.menuBarVisibility": "toggle",
+	// Theme
+	"workbench.colorTheme": "Community Material Theme High Contrast",
+	"workbench.iconTheme": "material-icon-theme",
+	// Explorer
+	"explorer.confirmDelete": false,
+	"explorer.compactFolders": false,
+	"explorer.confirmDragAndDrop": false,
+	// Keyboard
+	"keyboard.dispatch": "keyCode",
+	// Language extensions
+	"javascript.validate.enable": true,
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"typescript.validate.enable": true,
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"typescript.preferences.importModuleSpecifier": "relative",
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+	// Helpers
+	"rust-analyzer.cargo.allFeatures": true,
+	"prettier.useTabs": true,
+	// Terminal profiles
+	"terminal.integrated.profiles.linux": {
+		"fish": {
+			"path": "fish"
+		}
+	},
+	// Default formatters
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[yaml]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
+}
