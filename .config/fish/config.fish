@@ -1,5 +1,7 @@
 set -x PATH $PATH $HOME/.cargo/bin
 
+set -x GPG_TTY (tty)
+
 alias yay paru
 alias j z
 
