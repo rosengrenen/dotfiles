@@ -9,6 +9,9 @@
 [pull]
   rebase = false
 
+[init]
+  defaultBranch = master
+
 [pager]
   diff = delta
   log = delta
