@@ -16,7 +16,7 @@ abbr --add ls exa
 abbr --add la exa -al
 abbr --add l exa -l
 
-abbr --add bat cat
+abbr --add cat bat
 
 zoxide init fish | source
 starship init fish | source
