@@ -28,7 +28,7 @@
 	// ESLint
 	"eslint.packageManager": "yarn",
 	// Theme
-	"workbench.colorTheme": "Community Material Theme High Contrast",
+	"workbench.colorTheme": "Material Theme Darker High Contrast",
 	"workbench.iconTheme": "material-icon-theme",
 	// Explorer
 	"explorer.confirmDelete": false,

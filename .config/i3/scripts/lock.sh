@@ -4,6 +4,6 @@ revert() {
 }
 
 trap revert HUP INT TERM
-xset +dpms dpms 15 15 15
+xset +dpms dpms 600 600 600
 betterlockscreen -l -- -n -e
 revert

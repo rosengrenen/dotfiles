@@ -117,26 +117,25 @@ bindsym $mod+Tab exec --no-startup-id rofi -show window -sorting fzf -matching f
 # keyboard config
 exec_always "setxkbmap -model pc105 -layout us,se -variant , -option altwin:swap_lalt_lwin -option caps:swapescape -option grp:win_space_toggle"
 
-# start composite manager
-exec picom
-
 focus_follows_mouse no
-
 default_border pixel 3
 default_floating_border none
-hide_edge_borders none
+mouse_warping none
+title_align center
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
-smart_borders on
 
-# class                 border  backgr. text    indicator child_border
-client.focused          #000000 #285577 #ffffff #2e9ef4   #b3f3f3
-client.focused_inactive #000000 #5f676a #ffffff #484e50   #0c4443
-client.unfocused        #000000 #222222 #888888 #292d2e   #0c4443
-client.urgent           #000000 #900000 #ffffff #900000   #ff0000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #000000
-client.background       #ffffff
+set $active_color "#47a7a6"
+set $inactive_color "#0c4443"
+
+# class                      border              background          text                indicator           child_border
+client.focused               #000000             #285577             #ffffff             $active_color       $active_color
+client.focused_inactive      #000000             #5f676a             #ffffff             $inactive_color     $inactive_color
+client.unfocused             #000000             #222222             #888888             $inactive_color     #0c4443
+client.urgent                #000000             #900000             #ffffff             $inactive_color     #ff0000
+client.placeholder           #000000             #0c0c0c             #ffffff             $inactive_color     #000000
+client.background            #ffffff
 
 bindsym $mod+Shift+s exec flameshot gui
 
@@ -150,37 +149,27 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # volume controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 4
-bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 4
-bindsym XF86AudioMute exec --no-startup-id pamixer -t
+bindsym XF86AudioRaiseVolume exec pamixer -i 4
+bindsym XF86AudioLowerVolume exec pamixer -d 4
+bindsym XF86AudioMute exec pamixer -t
 
 bar {
   id main
   font pango:Source Code Pro SemiBold, FontAwesome 10
   position top
-  status_command .cargo/bin/i3status-simple
+  # status_command .cargo/bin/i3status-simple
+  status_command i3status
   tray_output none
   colors {
-    separator          #666666
-    background         #222222
-    statusline         #dddddd
-    focused_workspace  #0088CC #0088CC #ffffff
-    active_workspace   #333333 #333333 #ffffff
-    inactive_workspace #333333 #333333 #888888
-    urgent_workspace   #2f343a #900000 #ffffff
-  }
-}
 
-bindsym $mod+t bar mode toggle tray
-bar {
-  id tray
-  mode hide
-  modifier none
-  position bottom
-  tray_output primary
-  workspace_buttons no
-  colors {
-    background #222222
+    # class                  border              background          text
+    focused_workspace        $active_color       $active_color       #ffffff
+    active_workspace         #333333             #333333             #ffffff
+    inactive_workspace       #333333             #333333             #888888
+    urgent_workspace         #ef4444             #ef4444             #ffffff
+    separator                #666666
+    background               #222222
+    statusline               #dddddd
   }
 }
 
@@ -188,8 +177,9 @@ bar {
 exec --no-startup-id feh --bg-scale $HOME/.wallpapers/simplistic-mountain.jpg
 
 # Update lock screen bg cache
-exec --no-startup-id betterlockscreen -u $HOME/wallpapers/blue-whale.png
+exec --no-startup-id betterlockscreen -u $HOME/.wallpapers/blue-whale.png
 
 # Lock after 5 minutes
 exec --no-startup-id xset s 300 600
-exec --no-startup-id xss-lock --transfer-sleep-lock $HOME/.config/i3/scripts/lock.sh
+exec --no-startup-id xss-lock $HOME/.config/i3/scripts/lock.sh
+#exec --no-startup-id xss-lock --transfer-sleep-lock $HOME/.config/i3/scripts/lock.sh

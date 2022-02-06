@@ -1,22 +1,39 @@
-set -x PATH $PATH $HOME/.cargo/bin
+set -x PATH $PATH $HOME/.cargo/bin (yarn global bin)
 
 set -x GPG_TTY (tty)
 
-alias yay paru
+alias y paru
 alias j z
 
-abbr --add gst git status
-abbr --add gaa git add --all
-abbr --add gds git diff --staged
-abbr --add gdh git diff HEAD
-abbr --add gl git log --oneline --graph
-abbr --add gcm git commit -m
+alias gst "git status"
+alias gaa "git add --all"
+alias ga. "git add ."
+alias gds "git diff --staged"
+alias gdh "git diff HEAD"
+alias gl "git log --oneline --graph"
+alias gcm "git commit -m"
 
-abbr --add ls exa
-abbr --add la exa -al
-abbr --add l exa -l
+alias ls exa
+alias l "exa -al"
+alias ll "exa -l"
 
-abbr --add cat bat
+alias cat bat
+
+alias sa "ssh-add -t 3600"
+alias sat "ssh-add -t "
+alias sad "ssh-add -d"
+
+function forbat --argument-names 'lang'
+    switch $lang
+        case json
+            prettier --parser json | bat --language json --pager "less -RF"
+        case js
+            prettier --parser babel | bat --language babel --pager "less -RF"
+        case '*'
+        echo I don\'t know $lang
+    end
+end
+funcsave forbat
 
 zoxide init fish | source
 starship init fish | source
