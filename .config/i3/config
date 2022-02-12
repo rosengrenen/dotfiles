@@ -139,6 +139,12 @@ client.background            #ffffff
 
 bindsym $mod+Shift+s exec flameshot gui
 
+for_window [class="code"] move container to workspace $ws2
+for_window [class="discord"] move container to workspace $ws9
+for_window [class="slack"] move container to workspace $ws9
+for_window [class="signal"] move container to workspace $ws9
+for_window [class="spotify"] move container to workspace $ws10
+
 # screen brightness controls
 bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
@@ -182,4 +188,11 @@ exec --no-startup-id betterlockscreen -u $HOME/.wallpapers/blue-whale.png
 # Lock after 5 minutes
 exec --no-startup-id xset s 300 600
 exec --no-startup-id xss-lock $HOME/.config/i3/scripts/lock.sh
-#exec --no-startup-id xss-lock --transfer-sleep-lock $HOME/.config/i3/scripts/lock.sh
+
+# Start applications
+exec --no-startup-id firefox
+exec --no-startup-id code
+exec --no-startup-id discord
+exec --no-startup-id slack
+exec --no-startup-id signal
+exec --no-startup-id spotify

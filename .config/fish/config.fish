@@ -9,7 +9,14 @@ alias gst "git status"
 alias gaa "git add --all"
 alias ga. "git add ."
 alias gds "git diff --staged"
-alias gdh "git diff HEAD"
+function gdh --argument-names 'reach'
+    if count $argv > /dev/null
+        git diff HEAD~$reach
+    else
+        git diff HEAD
+    end
+end
+funcsave gdh
 alias gl "git log --oneline --graph"
 alias gcm "git commit -m"
 
@@ -30,10 +37,16 @@ function forbat --argument-names 'lang'
         case js
             prettier --parser babel | bat --language babel --pager "less -RF"
         case '*'
-        echo I don\'t know $lang
+            echo I don\'t know $lang
     end
 end
 funcsave forbat
+
+function bluehead
+    bluetoothctl power on
+    bluetoothctl connect 94:DB:56:8E:74:D9 
+end
+funcsave bluehead
 
 zoxide init fish | source
 starship init fish | source

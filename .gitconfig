@@ -1,7 +1,7 @@
 [user]
   name = Rasmus Rosengren
   email = rasmus.rosengren@protonmail.com
-  signingkey = A5EE9B6829E20E3E
+  signingkey = C3BED1500C477BED
 
 [commit]
   gpgsign = true
