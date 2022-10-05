@@ -42,10 +42,10 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+Space floating toggle
+bindcode $mod+Shift+65 floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+Space focus mode_toggle
+bindcode $mod+65 focus mode_toggle
 
 # define names for default workspaces so that they can be referenced later 
 set $ws1 "1"
@@ -108,17 +108,19 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# application launcher 
-bindsym $mod+d exec --no-startup-id rofi -show drun -sorting fzf -matching fuzzy
+# application launcher
+bindsym $mod+d exec --no-startup-id ~/.config/polybar/docky/scripts/launcher.sh
 
 # window switcher
-bindsym $mod+Tab exec --no-startup-id rofi -show window -sorting fzf -matching fuzzy
+bindsym $mod+Tab exec --no-startup-id ~/.config/polybar/docky/scripts/window-switcher.sh
 
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 # keyboard config
-exec_always "setxkbmap -model pc105 -layout us,se -variant , -option altwin:swap_lalt_lwin -option caps:swapescape -option grp:win_space_toggle"
+exec_always --no-startup-id "setxkbmap -option altwin:swap_lalt_lwin -option caps:swapescape"
 
 focus_follows_mouse no
 default_border pixel 3
+for_window [all] border pixel 3  # workaround for https://github.com/i3/i3/issues/5149
 default_floating_border none
 mouse_warping none
 title_align center
@@ -159,26 +161,6 @@ bindsym XF86AudioRaiseVolume exec pamixer -i 4
 bindsym XF86AudioLowerVolume exec pamixer -d 4
 bindsym XF86AudioMute exec pamixer -t
 
-bar {
-  id main
-  font pango:Source Code Pro SemiBold, FontAwesome 10
-  position top
-  # status_command .cargo/bin/i3status-simple
-  status_command i3status
-  tray_output none
-  colors {
-
-    # class                  border              background          text
-    focused_workspace        $active_color       $active_color       #ffffff
-    active_workspace         #333333             #333333             #ffffff
-    inactive_workspace       #333333             #333333             #888888
-    urgent_workspace         #ef4444             #ef4444             #ffffff
-    separator                #666666
-    background               #222222
-    statusline               #dddddd
-  }
-}
-
 # Set background image
 exec --no-startup-id feh --bg-scale $HOME/.wallpapers/simplistic-mountain.jpg
 
@@ -189,10 +171,11 @@ exec --no-startup-id betterlockscreen -u $HOME/.wallpapers/blue-whale.png
 exec --no-startup-id xset s 300 600
 exec --no-startup-id xss-lock $HOME/.config/i3/scripts/lock.sh
 
+exec --no-startup-id fcitx5 -d
+
 # Start applications
-exec --no-startup-id firefox
-exec --no-startup-id code
 exec --no-startup-id discord
 exec --no-startup-id slack
 exec --no-startup-id signal
 exec --no-startup-id spotify
+exec --no-startup-id nextcloud --background

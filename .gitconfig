@@ -1,16 +1,19 @@
 [user]
   name = Rasmus Rosengren
   email = rasmus.rosengren@protonmail.com
-  signingkey = C3BED1500C477BED
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEP0CuxJM6JUeeoD0+B1YqjlWJMyDBv75CPZVoodXRxN
 
 [commit]
   gpgsign = true
 
+[gpg]
+  format = ssh
+
 [pull]
-  rebase = false
+  ff = only
 
 [init]
-  defaultBranch = master
+  defaultBranch = main
 
 [pager]
   diff = delta

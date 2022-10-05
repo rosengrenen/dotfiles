@@ -1,6 +1,9 @@
-set -x PATH $PATH $HOME/.cargo/bin (yarn global bin)
+set -x fish_greeting (fortune)
+
+set -x PATH $PATH $HOME/.cargo/bin (yarn global bin) $HOME/go/bin
 
 set -x GPG_TTY (tty)
+set -x EDITOR vim
 
 alias y paru
 alias j z
@@ -16,7 +19,6 @@ function gdh --argument-names 'reach'
         git diff HEAD
     end
 end
-funcsave gdh
 alias gl "git log --oneline --graph"
 alias gcm "git commit -m"
 
@@ -40,13 +42,11 @@ function forbat --argument-names 'lang'
             echo I don\'t know $lang
     end
 end
-funcsave forbat
 
 function bluehead
     bluetoothctl power on
     bluetoothctl connect 94:DB:56:8E:74:D9 
 end
-funcsave bluehead
 
 zoxide init fish | source
 starship init fish | source
