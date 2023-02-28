@@ -1,6 +1,6 @@
 set -x fish_greeting (fortune)
 
-set -x PATH $PATH $HOME/.cargo/bin (yarn global bin) $HOME/go/bin
+set -x PATH $PATH $HOME/.cargo/bin (yarn global bin) $HOME/go/bin $HOME/.local/bin
 
 set -x GPG_TTY (tty)
 set -x EDITOR vim
@@ -31,6 +31,8 @@ alias cat bat
 alias sa "ssh-add -t 3600"
 alias sat "ssh-add -t "
 alias sad "ssh-add -d"
+
+alias sus sudo
 
 function forbat --argument-names 'lang'
     switch $lang

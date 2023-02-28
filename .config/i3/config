@@ -171,7 +171,11 @@ exec --no-startup-id betterlockscreen -u $HOME/.wallpapers/blue-whale.png
 exec --no-startup-id xset s 300 600
 exec --no-startup-id xss-lock $HOME/.config/i3/scripts/lock.sh
 
+# Start fcitx (input languages)
 exec --no-startup-id fcitx5 -d
+
+# Start compositor
+exec --no-startup-id picom --fade-in-step=1 --fade-out-step=1 --fade-delta=0 -i 1 -m 1
 
 # Start applications
 exec --no-startup-id discord
