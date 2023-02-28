@@ -109,10 +109,10 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # application launcher
-bindsym $mod+d exec --no-startup-id ~/.config/polybar/docky/scripts/launcher.sh
+bindsym $mod+d exec --no-startup-id ~/.config/polybar/scripts/launcher.sh
 
 # window switcher
-bindsym $mod+Tab exec --no-startup-id ~/.config/polybar/docky/scripts/window-switcher.sh
+bindsym $mod+Tab exec --no-startup-id ~/.config/polybar/scripts/window-switcher.sh
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 # keyboard config
