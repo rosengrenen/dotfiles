@@ -1,5 +1,3 @@
-set -x fish_greeting (fortune)
-
 set -x PATH $PATH $HOME/.cargo/bin (yarn global bin) $HOME/go/bin $HOME/.local/bin
 
 set -x GPG_TTY (tty)
@@ -51,6 +49,11 @@ end
 function bluehead
     bluetoothctl power on
     bluetoothctl connect 94:DB:56:8E:74:D9 
+end
+
+function fish_greeting
+    set -l toon (random choice {default,bud-frogs,moose,small,tux,vader})
+    fortune -s | cowsay -f $toon | lolcat
 end
 
 zoxide init fish | source
