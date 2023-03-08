@@ -115,7 +115,8 @@ bindsym $mod+d exec --no-startup-id ~/.config/polybar/scripts/launcher.sh
 bindsym $mod+Tab exec --no-startup-id ~/.config/polybar/scripts/window-switcher.sh
 
 # layout switcher
-bindsym $mod+o exec --no-startup-id ~/.config/polybar/scripts/kb-layout.sh
+bindsym $mod+o exec --no-startup-id ~/.config/i3/scripts/toggle-kb-layout.sh
+bindsym $mod+i exec --no-startup-id ~/.config/i3/scripts/toggle-kb-language.sh
 
 # start polybar instance
 exec_always --no-startup-id ~/.config/polybar/launch.sh
@@ -177,7 +178,7 @@ exec --no-startup-id xset s 300 600
 exec --no-startup-id xss-lock $HOME/.config/i3/scripts/lock.sh
 
 # Start fcitx (input languages)
-exec --no-startup-id fcitx5 -d
+# exec --no-startup-id fcitx5 -d
 
 # Start compositor
 exec --no-startup-id picom --fade-in-step=1 --fade-out-step=1 --fade-delta=0 -i 1 -m 1
