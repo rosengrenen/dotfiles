@@ -9,6 +9,7 @@ alias y paru
 alias j z
 alias v nvim
 alias vim nvim
+alias zj zellij
 
 alias gst "git status"
 alias gaa "git add --all"
