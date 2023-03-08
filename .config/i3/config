@@ -114,9 +114,14 @@ bindsym $mod+d exec --no-startup-id ~/.config/polybar/scripts/launcher.sh
 # window switcher
 bindsym $mod+Tab exec --no-startup-id ~/.config/polybar/scripts/window-switcher.sh
 
+# layout switcher
+bindsym $mod+o exec --no-startup-id ~/.config/polybar/scripts/kb-layout.sh
+
+# start polybar instance
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+
 # keyboard config
-exec_always --no-startup-id "setxkbmap -option altwin:swap_lalt_lwin -option caps:swapescape"
+exec_always --no-startup-id "setxkbmap -option altwin:swap_lalt_lwin -option caps:escape"
 
 focus_follows_mouse no
 default_border pixel 3
