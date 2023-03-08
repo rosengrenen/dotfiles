@@ -1,7 +1,7 @@
 {
 	// Editor settings
-	"editor.fontFamily": "Source Code Pro",
-	"editor.fontWeight": 600,
+	"editor.fontFamily": "PragmataPro, Source Code Pro",
+	"editor.fontWeight": 400,
 	"editor.fontLigatures": false,
 	"editor.fontSize": 14,
 	"editor.lineHeight": 20,
@@ -52,6 +52,7 @@
 			"path": "fish"
 		}
 	},
+	"terminal.integrated.fontFamily": "PragmataPro, Source Code Pro",
 	// Default formatters
 	"[javascript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"

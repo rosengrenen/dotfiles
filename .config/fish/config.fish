@@ -3,10 +3,12 @@ set -x fish_greeting (fortune)
 set -x PATH $PATH $HOME/.cargo/bin (yarn global bin) $HOME/go/bin $HOME/.local/bin
 
 set -x GPG_TTY (tty)
-set -x EDITOR vim
+set -x EDITOR nvim
 
 alias y paru
 alias j z
+alias v nvim
+alias vim nvim
 
 alias gst "git status"
 alias gaa "git add --all"
