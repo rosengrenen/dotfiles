@@ -1,5 +1,3 @@
 #!/bin/sh
 
-source $HOME/.config/i3/scripts/kb-layout.sh
-
-toggle_layout
+$HOME/.cargo/bin/kb_layout_mgr_client 1
