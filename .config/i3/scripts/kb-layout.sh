@@ -1,9 +1,6 @@
 is_us=$(setxkbmap -query | grep us | wc -l)
 is_colemak=$(setxkbmap -query | grep colemak | wc -l)
 
-echo "Is us? $is_us"
-echo "Is colemak? $is_colemak"
-
 function set_us_qwerty() {
   echo "Set us qwerty"
   setxkbmap -layout us
