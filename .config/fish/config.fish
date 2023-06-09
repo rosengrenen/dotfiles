@@ -1,4 +1,4 @@
-set -x PATH $PATH $HOME/.cargo/bin (yarn global bin) $HOME/go/bin $HOME/.local/bin
+set -x PATH $PATH $HOME/.cargo/bin $HOME/.yarn/bin $HOME/go/bin $HOME/.local/bin
 
 set -x GPG_TTY (tty)
 set -x EDITOR nvim
@@ -34,6 +34,15 @@ alias sat "ssh-add -t "
 alias sad "ssh-add -d"
 
 alias sus sudo
+
+alias dc "docker compose"
+alias dcu "docker compose up -d"
+alias dcl "docker compose logs -f"
+alias dcps "docker compose ps"
+alias dce "docker compose exec"
+alias dcd "docker compose down"
+alias dcdv "docker compose down -v"
+alias dcr "docker compose restart"
 
 function forbat --argument-names 'lang'
     switch $lang

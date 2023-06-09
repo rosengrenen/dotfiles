@@ -182,10 +182,3 @@ exec --no-startup-id xss-lock $HOME/.config/i3/scripts/lock.sh
 
 # Start compositor
 exec --no-startup-id picom --fade-in-step=1 --fade-out-step=1 --fade-delta=0 -i 1 -m 1
-
-# Start applications
-exec --no-startup-id discord
-exec --no-startup-id slack
-exec --no-startup-id signal
-exec --no-startup-id spotify
-exec --no-startup-id nextcloud --background
