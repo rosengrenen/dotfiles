@@ -118,6 +118,9 @@ bindsym $mod+Tab exec --no-startup-id ~/.config/polybar/scripts/window-switcher.
 bindsym $mod+o exec --no-startup-id ~/.config/i3/scripts/toggle-kb-layout.sh
 bindsym $mod+i exec --no-startup-id ~/.config/i3/scripts/toggle-kb-language.sh
 
+# toggle mute
+bindsym $mod+m exec --no-startup-id ~/.cargo/bin/microphone_client 0
+
 # start polybar instance
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
@@ -168,7 +171,7 @@ bindsym XF86AudioLowerVolume exec pamixer -d 4
 bindsym XF86AudioMute exec pamixer -t
 
 # Set background image
-exec --no-startup-id feh --bg-scale $HOME/.wallpapers/simplistic-mountain.jpg
+exec --no-startup-id feh --bg-scale $HOME/.wallpapers/flipflappers.jpg
 
 # Update lock screen bg cache
 exec --no-startup-id betterlockscreen -u $HOME/.wallpapers/blue-whale.png
