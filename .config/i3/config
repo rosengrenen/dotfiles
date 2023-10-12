@@ -125,7 +125,8 @@ bindsym $mod+m exec --no-startup-id ~/.cargo/bin/microphone_client 0
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # keyboard config
-exec_always --no-startup-id "setxkbmap -option altwin:swap_lalt_lwin -option caps:escape"
+exec_always --no-startup-id "setxkbmap -option altwin:swap_lalt_lwin -option ctrl:nocaps"
+exec_always --no-startup-id "xcape -t 0 -e 'Control_L=Escape'"
 
 focus_follows_mouse no
 default_border pixel 3
