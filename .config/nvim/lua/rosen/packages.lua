@@ -11,4 +11,7 @@ require("lazy").setup({
     -- Manage LSP servers
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
+
+    -- Syntax highlighting
+    {'nvim-treesitter/nvim-treesitter'}
 })
