@@ -5,3 +5,4 @@ vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.expandtab = true
 vim.opt.colorcolumn = "100"
+vim.g.notimeout = true
