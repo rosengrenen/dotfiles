@@ -2,8 +2,8 @@ return {
     {
         "neovim/nvim-lspconfig",
         init = function()
-            vim.api.nvim_create_autocmd('LspAttach', {
-                desc = 'LSP actions',
+            vim.api.nvim_create_autocmd("LspAttach", {
+                desc = "LSP actions",
                 callback = function(event)
                     -- TODO: create lsp keybinds, or maybe in keys
                 end
@@ -19,8 +19,8 @@ return {
             "hrsh7th/cmp-nvim-lsp"
         },
         opts = function()
-            local lspconfig = require('lspconfig')
-            local cmp_lsp = require('cmp_nvim_lsp')
+            local lspconfig = require("lspconfig")
+            local cmp_lsp = require("cmp_nvim_lsp")
             return {
                 handlers = {
                     function(server)
@@ -37,11 +37,11 @@ return {
         "hrsh7th/nvim-cmp",
         dependencies = {
             "L3MON4D3/LuaSnip",
-            'saadparwaiz1/cmp_luasnip'
+            "saadparwaiz1/cmp_luasnip"
         },
         opts = function()
-            local cmp = require('cmp')
-            local luasnip = require('luasnip')
+            local cmp = require("cmp")
+            local luasnip = require("luasnip")
             local luasnip_jump_forward = function(fallback)
                 if luasnip.jumpable(1) then
                     luasnip.jump(1)
@@ -51,16 +51,16 @@ return {
             end
             return {
                 sources = {
-                    { name = 'nvim_lsp' },
+                    { name = "nvim_lsp" },
                     { name = "luasnip" }
                 },
                 mapping = {
-                    ['<C-h>'] = cmp.mapping.abort(),
-                    ['<C-j>'] = cmp.mapping.select_next_item(),
-                    ['<C-k>'] = cmp.mapping.select_prev_item(),
-                    ['<C-l>'] = cmp.mapping.confirm({ select = true }),
-                    ['<C-f>'] = cmp.mapping(luasnip_jump_forward, { 'i', 's' }),
-                    ['<C-Space>'] = cmp.mapping.complete(),
+                    ["<C-h>"] = cmp.mapping.abort(),
+                    ["<C-j>"] = cmp.mapping.select_next_item(),
+                    ["<C-k>"] = cmp.mapping.select_prev_item(),
+                    ["<C-l>"] = cmp.mapping.confirm({ select = true }),
+                    ["<C-f>"] = cmp.mapping(luasnip_jump_forward, { "i", "s" }),
+                    ["<C-Space>"] = cmp.mapping.complete(),
                 },
                 snippet = {
                     expand = function(args)
