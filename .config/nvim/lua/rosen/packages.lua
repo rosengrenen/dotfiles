@@ -13,5 +13,12 @@ require("lazy").setup({
     { "williamboman/mason-lspconfig.nvim" },
 
     -- Syntax highlighting
-    {'nvim-treesitter/nvim-treesitter'}
+    { 'nvim-treesitter/nvim-treesitter' },
+
+    -- Telescope
+    {
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.4',
+        dependencies = { 'nvim-lua/plenary.nvim' }
+    }
 })
