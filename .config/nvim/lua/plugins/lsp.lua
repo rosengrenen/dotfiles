@@ -24,11 +24,16 @@ return {
             return {
                 handlers = {
                     function(server)
+                        local function on_attach(client, bufnr)
+                            require("lsp-format").on_attach(client, bufnr)
+                        end
+
                         lspconfig[server].setup({
-                            capabilities = cmp_lsp.default_capabilities()
+                            capabilities = cmp_lsp.default_capabilities(),
+                            on_attach = on_attach
                         })
                     end
-                }
+                },
             }
         end
     },
@@ -70,4 +75,9 @@ return {
             }
         end,
     },
+    -- Format on save
+    {
+        "lukas-reineke/lsp-format.nvim",
+        opts = {}
+    }
 }
