@@ -10,7 +10,7 @@ return {
     init = function()
         local wk = require("which-key")
         wk.register({
-            ["<leader>f"] = { name = "Find in files" },
+            ["<leader>f"] = { name = "Find in..." },
         })
     end,
     config = function()
@@ -76,7 +76,7 @@ return {
             desc = "Find in files"
         },
         {
-            "<leader>u",
+            "<leader>fu",
             mode = { "n", "x" },
             function()
                 require("telescope").extensions.undo.undo()
