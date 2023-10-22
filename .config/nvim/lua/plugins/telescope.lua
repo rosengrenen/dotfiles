@@ -12,6 +12,17 @@ return {
             ["<leader>f"] = { name = "Find in files" },
         })
     end,
+    opts = {
+        defaults = {
+            mappings = {
+                i = {
+                    -- TODO remove n and p
+                    ["<C-j>"] = "move_selection_next",
+                    ["<C-k>"] = "move_selection_previous"
+                }
+            }
+        }
+    },
     keys = function()
         return {
             {
