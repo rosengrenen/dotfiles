@@ -22,40 +22,38 @@ return {
             }
         }
     },
-    keys = function()
-        return {
-            {
-                "<leader>ff",
-                mode = "n",
-                function()
-                    require("telescope.builtin").find_files()
-                end,
-                desc = "Find all files"
-            },
-            {
-                "<leader>fg",
-                mode = "n",
-                function()
-                    require("telescope.builtin").git_files()
-                end,
-                desc = "Find git files"
-            },
-            {
-                "<leader>fh",
-                mode = "n",
-                function()
-                    require("telescope.builtin").find_files { hidden = true }
-                end,
-                desc = "Find hidden files"
-            },
-            {
-                "<leader>fj",
-                mode = "n",
-                function()
-                    require("telescope.builtin").live_grep()
-                end,
-                desc = "Find in files"
-            },
-        }
-    end
+    keys = {
+        {
+            "<leader>ff",
+            mode = "n",
+            function()
+                require("telescope.builtin").find_files()
+            end,
+            desc = "Find all files"
+        },
+        {
+            "<leader>fg",
+            mode = "n",
+            function()
+                require("telescope.builtin").git_files()
+            end,
+            desc = "Find git files"
+        },
+        {
+            "<leader>fh",
+            mode = "n",
+            function()
+                require("telescope.builtin").find_files { hidden = true }
+            end,
+            desc = "Find hidden files"
+        },
+        {
+            "<leader>fj",
+            mode = "n",
+            function()
+                require("telescope.builtin").live_grep()
+            end,
+            desc = "Find in files"
+        },
+    }
 }
