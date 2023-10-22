@@ -4,9 +4,14 @@ return {
         "folke/which-key.nvim",
     },
     init = function()
-        local wk = require("which-key")
-        wk.register({
-            ["<leader>t"] = { name = "Select syntax tree" }
+        vim.api.nvim_create_autocmd("BufNew", {
+            desc = "Treesitter tree selection",
+            callback = function(event)
+                local wk = require("which-key")
+                wk.register({
+                    ["<leader>t"] = { name = "Select syntax tree", buffer = event.buf }
+                })
+            end
         })
     end,
     opts = {

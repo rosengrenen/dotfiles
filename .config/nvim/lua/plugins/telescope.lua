@@ -9,7 +9,7 @@ return {
     init = function()
         local wk = require("which-key")
         wk.register({
-            ["<leader>f"] = { name = "Find in files" }
+            ["<leader>f"] = { name = "Find in files" },
         })
     end,
     keys = function()

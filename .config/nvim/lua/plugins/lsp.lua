@@ -5,7 +5,50 @@ return {
             vim.api.nvim_create_autocmd("LspAttach", {
                 desc = "LSP actions",
                 callback = function(event)
-                    -- TODO: create lsp keybinds, or maybe in keys
+                    local wk = require("which-key")
+                    wk.register({
+                        ["<leader>l"] = { name = "LSP actions", buffer = event.buf }
+                    })
+
+                    local function make_opts(opts)
+                        return {
+                            buffer = event.buf,
+                            desc = opts.desc
+                        }
+                    end
+
+                    vim.keymap.set('n', 'K', vim.lsp.buf.hover, make_opts({ desc = "Hover help" }))
+
+                    -- Gotos
+                    vim.keymap.set('n', 'gd', function()
+                        require('telescope.builtin').lsp_definitions()
+                    end, make_opts({ desc = "Go to definition" }))
+                    vim.keymap.set('n', 'gD', function()
+                        require('telescope.builtin').diagnostics()
+                    end, make_opts({ desc = "Go to definition" }))
+                    vim.keymap.set('n', 'gr', function()
+                        require('telescope.builtin').lsp_references()
+                    end, make_opts({ desc = "Go to references" }))
+                    vim.keymap.set('n', 'gk', function()
+                        require("telescope.builtin").lsp_type_definitions()
+                    end, make_opts({ desc = "Go to type definition" }))
+
+                    -- <leader>
+                    vim.keymap.set('n', '<leader>lr', vim.lsp.buf.references, make_opts({ desc = "Show references" }))
+                    vim.keymap.set('n', '<leader>lk', vim.lsp.buf.type_definition,
+                        make_opts({ desc = "Show type definitions" }))
+                    vim.keymap.set('n', '<leader>ln', vim.lsp.buf.rename, make_opts({ desc = "Rename symbol" }))
+                    vim.keymap.set({ 'n', 'v' }, '<leader>la', vim.lsp.buf.code_action,
+                        make_opts({ desc = "Code action" }))
+                    vim.keymap.set('n', '<leader>lf', function()
+                        vim.lsp.buf.format { async = true }
+                    end, make_opts({ desc = "Format buffer" }))
+                    vim.keymap.set('n', '<leader>ld', function()
+                        require("telescope.builtin").lsp_document_symbols()
+                    end, make_opts({ desc = "Search document symbols" }))
+                    vim.keymap.set('n', '<leader>lw', function()
+                        require("telescope.builtin").lsp_dynamic_workspace_symbols()
+                    end, make_opts({ desc = "Search workspace symbols" }))
                 end
             })
         end
@@ -66,6 +109,8 @@ return {
                     ["<C-l>"] = cmp.mapping.confirm({ select = true }),
                     ["<C-f>"] = cmp.mapping(luasnip_jump_forward, { "i", "s" }),
                     ["<C-Space>"] = cmp.mapping.complete(),
+                    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+                    ['<C-d>'] = cmp.mapping.scroll_docs(4),
                 },
                 snippet = {
                     expand = function(args)
