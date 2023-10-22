@@ -16,7 +16,6 @@ return {
         defaults = {
             mappings = {
                 i = {
-                    -- TODO remove n and p
                     ["<C-j>"] = "move_selection_next",
                     ["<C-k>"] = "move_selection_previous"
                 }
@@ -27,34 +26,34 @@ return {
         return {
             {
                 "<leader>ff",
+                mode = "n",
                 function()
                     require("telescope.builtin").find_files()
                 end,
-                mode = "n",
                 desc = "Find all files"
             },
             {
                 "<leader>fg",
+                mode = "n",
                 function()
                     require("telescope.builtin").git_files()
                 end,
-                mode = "n",
                 desc = "Find git files"
             },
             {
                 "<leader>fh",
+                mode = "n",
                 function()
                     require("telescope.builtin").find_files { hidden = true }
                 end,
-                mode = "n",
                 desc = "Find hidden files"
             },
             {
                 "<leader>fj",
+                mode = "n",
                 function()
                     require("telescope.builtin").live_grep()
                 end,
-                mode = "n",
                 desc = "Find in files"
             },
         }
