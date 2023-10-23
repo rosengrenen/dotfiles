@@ -76,6 +76,38 @@ return {
             desc = "Find in files"
         },
         {
+            "<leader>fs",
+            mode = "n",
+            function()
+                require("telescope.builtin").search_history()
+            end,
+            desc = "Find recent searches"
+        },
+        {
+            "<leader>fc",
+            mode = "n",
+            function()
+                require("telescope.builtin").command_history()
+            end,
+            desc = "Find recent commands"
+        },
+        {
+            "<leader>fo",
+            mode = "n",
+            function()
+                require("telescope.builtin").oldfiles()
+            end,
+            desc = "Find recent files"
+        },
+        {
+            "<leader>fb",
+            mode = "n",
+            function()
+                require("telescope.builtin").current_buffer_fuzzy_find()
+            end,
+            desc = "Find in buffer"
+        },
+        {
             "<leader>fu",
             mode = { "n", "x" },
             function()
