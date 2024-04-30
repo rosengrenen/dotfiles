@@ -9,6 +9,9 @@
 [gpg]
   format = ssh
 
+[push]
+    autoSetupRemote = true
+
 [pull]
   ff = only
 
