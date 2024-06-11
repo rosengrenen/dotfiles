@@ -1,9 +1,9 @@
 {
 	// Editor settings
-	"editor.fontFamily": "PragmataPro, Source Code Pro",
+	"editor.fontFamily": "Iosevka, PragmataPro, Source Code Pro",
 	"editor.fontWeight": 400,
 	"editor.fontLigatures": false,
-	"editor.fontSize": 14,
+	"editor.fontSize": 16,
 	"editor.lineHeight": 20,
 	"editor.tabSize": 2,
 	"editor.detectIndentation": false,

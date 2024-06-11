@@ -45,6 +45,8 @@ alias dcd "docker compose down"
 alias dcdv "docker compose down -v"
 alias dcr "docker compose restart"
 
+alias lg lazygit
+
 function forbat --argument-names 'lang'
     switch $lang
         case json

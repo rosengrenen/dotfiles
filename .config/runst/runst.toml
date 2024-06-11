@@ -1,0 +1,35 @@
+[global]
+    log_verbosity = "info"
+    startup_notification = true
+    geometry = "1x1+3000+3000"
+    wrap_content = true
+    font = "Monospace 10"
+    template = ""
+
+[urgency_low]
+    background = "#000000"
+    foreground = "#505050"
+    timeout = 2
+    text = "low"
+    custom_commands = [
+        { filter = '{ "summary": "^RuneLite.*" }', command = '~/.config/runst/scripts/show-scratchpad.sh' }
+    ]
+
+[urgency_normal]
+    background = "#000000"
+    foreground = "#3f3c35"
+    timeout = 10
+    auto_clear = true
+    text = "normal"
+    custom_commands = [
+        { filter = '{ "summary": "^RuneLite.*" }', command = '~/.config/runst/scripts/show-scratchpad.sh' }
+    ]
+
+[urgency_critical]
+    background = "#000000"
+    foreground = "#bcbcb2"
+    timeout = 0
+    text = "critical"
+    custom_commands = [
+        { filter = '{ "summary": "^RuneLite.*" }', command = '~/.config/runst/scripts/show-scratchpad.sh' }
+    ]

@@ -177,7 +177,7 @@ exec --no-startup-id feh --bg-scale $HOME/.wallpapers/flipflappers.jpg
 exec --no-startup-id betterlockscreen -u $HOME/.wallpapers/blue-whale.png
 
 # Lock after 5 minutes
-exec --no-startup-id xset s 300 600
+exec --no-startup-id xset s 1800 1800
 exec --no-startup-id xss-lock $HOME/.config/i3/scripts/lock.sh
 
 # Start fcitx (input languages)
@@ -185,3 +185,14 @@ exec --no-startup-id xss-lock $HOME/.config/i3/scripts/lock.sh
 
 # Start compositor
 exec --no-startup-id picom --fade-in-step=1 --fade-out-step=1 --fade-delta=0 -i 1 -m 1
+
+for_window [class="jagexlauncher.exe"] floating enable
+for_window [class="net-runelite-client-RuneLite"] floating enable
+
+# Make the currently focused window a scratchpad
+bindsym $mod+y [floating] move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+u scratchpad show
+
+exec --no-startup-id sh -c "while true; do killall runst; runst; done"
